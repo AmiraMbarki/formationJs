@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color:rgb(119, 183, 255);">
+    <h1 style="font-family:Verdana, Geneva, sans-serif;color:rgb(37, 85, 148)">To Do List</h1>
+    <input style="border: 2px solid; width: 300px;height: 20px;" type="text" />
+    <button style="height: 27px;background-color: greenyellow;cursor:pointeur;font-family:Verdana, Geneva, sans-serif;">add todo</button>
+    <ul style="list-style-type: none;"></ul>  
+   
+    <script>
+      let button = document.querySelector("button");
+
+      let liste = document.querySelector("ul");
+
+      let input = document.querySelector("input");
+
+      button.addEventListener("click", addTodo);
+      
+ 
+      input.addEventListener("keyup", function (event) {
+        if (event.keyCode == 13) {
+         button.click();
+ }
+});
+      
+    
+                  
+          
+      function addTodo() {
+        
+        if(input.value==""){
+            alert("Empty todo !");
+        }else{
+            
+            liste.innerHTML += `<li><button style="height: 27px;background-color:pink;"> Delete</button>
+                <input type="checkbox",style="color:pink;">    ${input.value}        </li>`;  
+           }
+        
+        input.value=''; 
+      }
+      
+
+
+    </script>
+  </body>
+</html>
